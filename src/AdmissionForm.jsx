@@ -36,11 +36,14 @@ const AdmissionForm = () => {
 
     try {
       console.log("Before Axios POST request");
-      response = await axios.post("http://localhost:3001/api/enroll", {
-        name,
-        age,
-        selectedBatch,
-      });
+      response = await axios.post(
+        "https://yoga-app-assignment-backend.vercel.app/api/enroll",
+        {
+          name,
+          age,
+          selectedBatch,
+        }
+      );
       console.log("After Axios POST request");
       console.log(response);
       setPaymentStatus(response.data.message);
